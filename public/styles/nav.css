@@ -22,12 +22,11 @@
   width: 120px;
 }
 
-#nav-bar .h1 {
+#nav-bar .header {
   font-size: 200%;
   height: 80px;
   line-height: 80px;
-  margin-left: 10px;
-  margin-right: 13.5em;
+  margin: 0.67em auto 0.67em 10px;
   width: 100%;
 
 }
