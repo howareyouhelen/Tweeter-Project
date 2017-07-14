@@ -1,5 +1,6 @@
+
 #nav-bar {
-  background-color: #00a087;
+  background-color: $brand-color;
   color: #e8fdff;
   display: flex;
   height: 80px;
@@ -13,22 +14,23 @@
 }
 
 #nav-bar .compose {
-  background-color: #4bbd7a;
-  border-color: #10582d;
+  background-color: #bdbdbd;
+  border-color: #565d59;
   border-radius: 10px;
   color: #ffffff;
   float: right;
-  height: 40px;
-  width: 120px;
+  font-size: 140%;
+  height: 60px;
+  margin-top: 10px;
+  width: 220px;
 }
 
 #nav-bar .header {
   font-size: 200%;
   height: 80px;
-  line-height: 80px;
+  line-height: 40px;
   margin: 0.67em auto 0.67em 10px;
   width: 100%;
-
 }
 
 #nav-bar .logo {

@@ -13,10 +13,12 @@ $(document).ready(function(){
 
   $(".compose").click(function(){
     $(".new-tweet").slideToggle();
+    $("textarea").focus();
   });
 
   function createTweetElement (tweetData) {
-    const newtime = new Date(tweetData.created_at*1000);
+
+    const newtime = moment(tweetData.created_at);
     const html = `
       <article class="tweet">
         <header>
@@ -28,7 +30,7 @@ $(document).ready(function(){
           <p>${escape(tweetData.content.text)}</p>
         </div>
         <footer>
-          <span class="date">${newtime.toUTCString()}</span>
+        <span class="date">${newtime.fromNow()}</span>
           <i class="fa fa-heart" aria-hidden="true"></i>
           <i class="fa fa-retweet" aria-hidden="true"></i>
           <i class="fa fa-flag" aria-hidden="true"></i>
