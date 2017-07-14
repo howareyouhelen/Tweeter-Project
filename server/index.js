@@ -1,6 +1,7 @@
 "use strict";
 
 // Basic express setup:
+require('dotenv').config();
 
 const PORT          = 8080;
 const express       = require("express");
@@ -12,7 +13,8 @@ app.use(express.static("public"));
 
 // The in-memory database of tweets. It's a basic object with an array in it.
 const MongoClient = require("mongodb").MongoClient;
-const MONGODB_URI = "mongodb://localhost:27017/tweeter";
+// const MONGODB_URI = "mongodb://localhost:27017/tweeter";
+const MONGODB_URI = process.env.MONGODB_URI;
 
 MongoClient.connect(MONGODB_URI, (err, db) => {
   if (err) {
