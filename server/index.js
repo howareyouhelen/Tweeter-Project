@@ -5,7 +5,7 @@ require('dotenv').config();
 
 console.log("let me tell you about my process.env, let me tell you about it:", process.env);
 
-const PORT          = process.env.port || 8080;
+const PORT          = process.env.PORT || 8080;
 const express       = require("express");
 const bodyParser    = require("body-parser");
 const app           = express();
