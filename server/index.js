@@ -3,6 +3,8 @@
 // Basic express setup:
 require('dotenv').config();
 
+console.log("let me tell you about my process.env, let me tell you about it:", process.env);
+
 const PORT          = process.env.port || 8080;
 const express       = require("express");
 const bodyParser    = require("body-parser");
@@ -16,12 +18,14 @@ const MongoClient = require("mongodb").MongoClient;
 // const MONGODB_URI = "mongodb://localhost:27017/tweeter";
 const MONGODB_URI = process.env.MONGODB_URI;
 
+console.log(`as far as I am concerned, PORT is ${PORT}`)
+
 MongoClient.connect(MONGODB_URI, (err, db) => {
   if (err) {
-    console.error('Failed to connect: ${MONGODB_URI}');
+    console.error(`Failed to connect: ${MONGODB_URI}`);
     throw err;
   }
-  console.log('Connected to mongodb: ${MONGODB_URI}');
+  console.log(`Connected to mongodb: ${MONGODB_URI}`);
 
 
   // The `data-helpers` module provides an interface to the database of tweets.
