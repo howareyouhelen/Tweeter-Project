@@ -3,7 +3,6 @@ $(document).ready(function(){
   //txtarea where you post tweet function
   $(".new-tweet > form > textarea").on( "keyup", function() {
     var txtar = $(".new-tweet > form > textarea");
-    // console.log(copy[0].value);
     console.log(txtar.val());
 
   //counter function

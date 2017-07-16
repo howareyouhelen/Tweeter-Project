@@ -48,14 +48,12 @@ $(document).ready(function(){
 
   //ajax GET request (fetching tweets from /tweetr page)
   function loadTweets() {
-    console.log("loadingtweets")
     $.getJSON('/tweets')
       .done((tweets) => {
         console.log(tweets.length);
       })
       .done((tweets) => {
         renderTweets(tweets)
-        console.log("renderTweets")
       })
   } //function loadTweets
 
@@ -79,7 +77,6 @@ $(document).ready(function(){
     event.preventDefault();
     if (validation()) {
     const serForm = $(this).serialize();
-    console.log(serForm)
     $.ajax({
       type: 'POST',
       url: '/tweets',
