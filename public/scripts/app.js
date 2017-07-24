@@ -37,14 +37,14 @@ $(document).ready(function(){
         </footer>
       </article>`;
     return html;
-  } //function createTweetElement
+  }
 
   function renderTweets(data) {
     $('#tweetcontainer').children().remove();
     data.forEach((tweet) => {
       $('#tweetcontainer').prepend(createTweetElement(tweet));
     });
-  } //function renderTweets
+  }
 
   //ajax GET request (fetching tweets from /tweetr page)
   function loadTweets() {
@@ -55,7 +55,7 @@ $(document).ready(function(){
       .done((tweets) => {
         renderTweets(tweets)
       })
-  } //function loadTweets
+  }
 
   //validation (check if data is "" or null)
   function validation() {
@@ -70,7 +70,7 @@ $(document).ready(function(){
       return false;
     }
       return true;
-  } // function validation
+  }
 
   //preventDefault of web page refreshing & turn obj into string
   function addNewTweet(event) {
@@ -85,8 +85,8 @@ $(document).ready(function(){
     .done(() => {
       loadTweets();
     }) // same as document ready but this is a property of ajax obj
-    } // end of if
-  }; // end of function addNewTweet
+    }
+  };
 
   const $form = $('#posting') //declaring form
   $form.on('submit', addNewTweet); //refers to 'this' in addNewTweet function
